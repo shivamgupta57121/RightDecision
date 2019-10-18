@@ -1,0 +1,16 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+#top{
+    padding: 10% 0;
+    text-align: center;
+    position: sticky;
+    font: bold 40px 'Open Sans';
+    background-color: rgb(243, 243, 243);
+    box-sizing: border-box;
+}

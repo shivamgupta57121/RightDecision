@@ -1,0 +1,58 @@
+<link rel="stylesheet" type="text/css" href="/css/third.css">
+
+<div ng-controller ='third' >
+
+    <div id="appheader">
+
+        circles hello jatin jindal
+
+    </div>
+
+    
+    
+    <div id="appbody">
+    
+
+        <div id="reportheading">
+            Hello , {{username}}
+        </div>
+
+       <div id="personality">
+           <div id="p1">
+               You are best  suitable for 
+           </div>
+           <div id="p2">
+              {{personality}} 
+           </div>
+           <div id="p3">
+               type of careers. 
+           </div>
+
+       </div>
+        
+
+        <div id="love">
+            You also love 
+        </div>
+
+        <div class="interest" ng-repeat="item in interest">
+            {{item}}
+        </div>
+
+        <div id="therefore">
+
+            Therefore , these are some of the 
+            careers we would like to recommend
+            you 
+
+        </div>
+
+
+      
+        <br><br>
+
+        <a href="#!/career"><button id="career"> SEE careers </button> </a>
+    
+    </div>
+    
+</div> 

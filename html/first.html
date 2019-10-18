@@ -1,0 +1,72 @@
+<link rel="stylesheet" type="text/css" href="/css/first.css">
+
+<div ng-controller = 'first' >
+    <div class="container">
+    <div id="appheader" class="row">
+
+        <div id="c" class="col-sm">  </div>
+        <div id="c" class="col-sm">  </div>
+        <div id="c" class="col-sm">  </div>
+    </div>
+    </div>
+
+    
+    
+    <div id="appbody">
+    
+        <form   ng-submit="nextquestion()">
+    
+                <div id='personalitycounter' ng-if="qcount < totalquestions">
+    
+                        {{qcount+1}} / {{totalquestions}}
+                
+                </div> 
+
+                <div id="questioncounter"> Q {{qcount+1}} . </div>
+
+                <div id="personalityquestion"> {{currentquestion}}  </div>
+
+                <br> <br>
+
+                <label>
+                   <input type="radio" class="availableoptions" name="choose" ng-value="1" ng-model="choosevalue"  ng-change="addvalue()" required > Dislike
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" class="availableoptions" name="choose" ng-value="2" ng-model="choosevalue"  ng-change="addvalue()" required > Slightly Dislike
+                 </label>
+ 
+                 <br><br>
+
+                 <label>
+                    <input type="radio" class="availableoptions" name="choose" ng-value="3" ng-model="choosevalue"  ng-change="addvalue()" required > Neutral
+                 </label>
+ 
+                 <br><br>
+
+                 <label>
+                    <input type="radio" class="availableoptions" name="choose" ng-value="4" ng-model="choosevalue"  ng-change="addvalue()" required > Slightly Like
+                 </label>
+ 
+                 <br><br>
+
+                <label>
+                   <input type="radio" class="availableoptions" name="choose" ng-value="5" ng-model="choosevalue"  ng-change="addvalue()" required > Enjoy
+                </label>
+
+                <br><br>
+
+                <input type="submit" value="NEXT" ng-if="qcount < totalquestions" id="next" >
+    
+    
+        </form>
+    
+        <br><br>
+
+        <a href="#!/second"><button ng-if='qcount >= totalquestions' id="nexttest"> End personality Test </button> </a>
+    
+    </div>
+    
+</div>
