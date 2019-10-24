@@ -7,10 +7,10 @@
 }
 
 #top{
-    padding: 10% 0;
+    padding: 10% 0% 0% 0% ;
     text-align: center;
-    position: sticky;
+   
     font: bold 40px 'Open Sans';
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(248,248,248);
     box-sizing: border-box;
 }
