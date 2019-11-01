@@ -11,10 +11,8 @@
     display: flex;
 }
 
-#appheader{
-    color: yellow;
 
-}
+
 
 #appheader #c {
     color: green;
