@@ -3,6 +3,29 @@ var app = angular.module("app",['ngRoute']);
 
 // factories = data 
 
+app.factory('subject',function(){
+
+    var service = {};
+
+    service.pmap = new Map([[0,'Conventional'],
+                            [1,'Realistic'],
+                            [2,'Artistic'],
+                            [3,'Investigatory'],
+                            [4,'Social'],
+                            [5,'Enterprising']]);
+    
+    service.imap = new Map([[0,'Science'],
+                            [1,'Maths'],
+                            [2,'Geography'],
+                            [3,'History'],
+                            [4,'Economics'],
+                            [5,'Political Science'],
+                            [6,'Phycology'],
+                            [7,'Arts']]);
+
+    return service ;
+});
+
 app.factory('questiondata' , function(){
 
     var service = {}
@@ -18,12 +41,12 @@ app.factory('user',function(){
     var service = {};
     service.username = 'Rohit';
 
-    service.personality = 'Realistic';
-    service.interest = ['Maths','Science','Geography'];
+    service.personality ;
+    service.interest ;
    
 
     service.personalityarray = [0,0,0,0,0,0];
-    service.interestarray = [0,0,0,0,0,0,0]
+    service.interestarray = [0,0,0,0,0,0,0,0]
     
     
     return service; 
@@ -88,7 +111,6 @@ app.controller('first',function($scope,questiondata,user){
     
 });
 
-
 app.controller('second',function($scope,questiondata,user){
 
     $scope.qcount = 0;
@@ -141,15 +163,46 @@ app.controller('second',function($scope,questiondata,user){
     
 });
 
-app.controller('third',function($scope,user){
+app.controller('third',function($scope,user,subject){
+
 
     $scope.username = user.username ; 
-    $scope.personality = 'Realistic' ;
-    //user.personality ; 
-    $scope.interest = user.interest;
 
 
+    function personalityf(parray,pmap){
+        //console.log(parray)
+        //console.log(parray.length);
+        
+               
+        var max = parray[0];
+        var pos = 0;
+        for(var i = 1 ; i < parray.length ; i++ ){
+            if(max<parray[i]){
+                max=parray[i];
+                pos=i;
+            }
+        }
+        //return personality ;
+        return pmap.get(pos)
 
+    }
+    $scope.personality = user.personality = personalityf(user.personalityarray,subject.pmap) ;
+    
+
+    function interestf(iarray,imap){
+        //console.log(iarray)
+        //console.log(iarray.length)
+        var passarray = [];
+        for(var i = 0 ; i < iarray.length ; i++ ){
+            if(iarray[i]==3){
+              
+                passarray.push(imap.get(i));
+            }
+        }
+        return passarray;
+    }
+
+    $scope.interest = user.interest = interestf(user.interestarray,subject.imap);
 });
 
 
