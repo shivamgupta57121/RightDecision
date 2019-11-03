@@ -1,17 +1,13 @@
 
 #appheader{
-    
     display: flex;
-
 }
 
 
 #questioncontainer{
-
     display: flex;
+    font: bold 15px 'open sans';
 }
-
-
 
 
 #appheader #c {
@@ -31,7 +27,8 @@
 #personalitycounter{
     text-align: right;
     margin-right: 2%;
-    margin-bottom: 3%;
+    font: bold 14px 'open sans';
+    margin-bottom: 5%;
 }
 
 #questioncounter{
@@ -46,6 +43,28 @@ label {
     margin-left: 5%;
     cursor:none;
 }
+
+input[type=radio] {
+    display:none; 
+    margin:10px;
+}
+
+input[type=radio] + label {
+    display:inline-block;
+    font: bold 15px 'open sans';
+    margin-left: 15%;
+    padding: 4px 12px;
+    width : 70%;
+    background-color: #ffffff;
+    border: 2px solid #d0d0d0;
+}
+
+input[type=radio]:checked + label { 
+    background-image: none;
+    border: none;
+    background-color:#000000;
+    color: #ffffff;
+ }
 
 #next{
     margin: 0 40% 0 60%;
