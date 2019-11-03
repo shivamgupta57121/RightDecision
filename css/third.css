@@ -16,16 +16,39 @@
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
 }
+#appbody{ 
+    font: 700 15px 'open sans';
+}
 
+#reportheading{
+    font: bold 25px 'open sans';
+}
+
+#p2,
+.interest{
+    font: bold 20px 'open sans';
+}
 
 #p2p3{
 
     display: flex;
 
 }
-
+#p3{
+    margin-top: 5px;
+}
 #career{
-
-    color: blue;
-
+    color: white;
+    background-color: black;
+    margin-top: 150px;
+    border: none;
+    width: 310px;
+    height: 50px;
+    border-radius: 10px;
+    font: bold 20px 'open sans';
+    margin-left: 25px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
