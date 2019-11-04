@@ -2,6 +2,7 @@
 #appheader{
     
     display: flex;
+    margin: 28px;
 }
 
 #appheader #c {
@@ -9,15 +10,34 @@
     border: solid;
     width: 20px;
     padding: 15px;
-    margin: 12%;
+   /* margin: 12%;*/
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
 }
+
+#pipe1,
+#pipe2,
+#pipe3,
+#pipe4{
+    width: 50px;
+    border-top: 1px solid green;
+    margin: 12px 0;
+    background: green;
+    border-bottom: 1px solid green;
+}
+
+.c1,
+.c2,
+.c3{
+    background-color: green;
+}
+
 #appbody{ 
     font: 700 15px 'open sans';
+    margin: 28px;
 }
 
 #reportheading{
@@ -46,7 +66,6 @@
     height: 50px;
     border-radius: 10px;
     font: bold 20px 'open sans';
-    margin-left: 25px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
