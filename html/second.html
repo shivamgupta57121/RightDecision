@@ -5,9 +5,13 @@
         <div class="container">
         <div id="appheader" class="row">
     
-            <div id="c" class="col-sm">  </div>
-            <div id="c" class="col-sm">  </div>
-            <div id="c" class="col-sm">  </div>
+            <div id="c" class="col-sm c1">  </div>
+            <div id="pipe1"></div>
+            <div id="pipe2"></div>
+            <div id="c" class="col-sm c2">  </div>
+            <div id="pipe3"></div>
+            <div id="pipe4"></div>
+            <div id="c" class="col-sm c3">  </div>
         </div>
         </div>
 
@@ -31,33 +35,25 @@
                 </div>
                 <br> <br>
 
-                <label>
-                   <input type="radio" class="availableoptions" name="choose" ng-value="1" ng-model="choosevalue"  ng-change="addvalue()" required > Dislike
-                </label>
+                <input type="radio" id = "r1" class="availableoptions" name="choose" ng-value="1" ng-model="choosevalue"  ng-change="addvalue()" required >
+                    <label for="r1">Dislike</label>
 
                 <br><br>
 
-                <label>
-                    <input type="radio" class="availableoptions" name="choose" ng-value="2" ng-model="choosevalue"  ng-change="addvalue()" required > Slightly Dislike
-                </label>
+                <input type="radio" id = "r2" class="availableoptions" name="choose" ng-value="2" ng-model="choosevalue"  ng-change="addvalue()" required >
+                    <label for = "r2" >Slightly Dislike</label>
  
                 <br><br>
-
-                <label>
-                    <input type="radio" class="availableoptions" name="choose" ng-value="3" ng-model="choosevalue"  ng-change="addvalue()" required > Neutral
-                </label>
+                <input type="radio" id = "r3" class="availableoptions" name="choose" ng-value="3" ng-model="choosevalue"  ng-change="addvalue()" required >
+                    <label for = "r3" >Neutral</label>
  
                 <br><br>
-
-                <label>
-                    <input type="radio" class="availableoptions" name="choose" ng-value="4" ng-model="choosevalue"  ng-change="addvalue()" required > Slightly Like
-                </label>
+                <input type="radio" id = "r4" class="availableoptions" name="choose" ng-value="4" ng-model="choosevalue"  ng-change="addvalue()" required >
+                    <label for = "r4" >Slightly Enjoy</label>
  
                 <br><br>
-
-                <label>
-                   <input type="radio" class="availableoptions" name="choose" ng-value="5" ng-model="choosevalue"  ng-change="addvalue()" required > Enjoy
-                </label>
+                <input type="radio" id = "r5" class="availableoptions" name="choose" ng-value="5" ng-model="choosevalue"  ng-change="addvalue()" required >
+                    <label for = "r5" >Enjoy</label>
 
                 <br><br>
 
