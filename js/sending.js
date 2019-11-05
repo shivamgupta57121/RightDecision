@@ -41,12 +41,11 @@ app.factory('user',function(){
     var service = {};
     service.username = 'Rohit Bansal';
 
-    service.personality ;
-    service.interest ;
-   
-
-    service.personalityarray = [0,0,0,0,0,0];
-    service.interestarray = [0,0,0,0,0,0,0,0]
+    service.personality = 0;
+    service.interest =  [1,4] ;
+ 
+    service.personalityarray = [0,0,0,7,0,0];
+    service.interestarray = [1,2,0,0,2,1,4,0];
     
     
     return service; 
@@ -54,8 +53,21 @@ app.factory('user',function(){
 
 });
 
+app.factory('career',function(){
 
-// controllers = functions 
+    var service = {};
+
+    service.careersarray = [
+                            {name : 'Doctor', personality : 3 , interest : [0,6] , id: 0 , data:{}},
+                            {name : 'Police Officer ', personality : 1 , interest :[3,4,5,7],id:1 , data:{}},
+                            {name : 'Bank Manager', personality : 0 , interest :[1,4] , id:2 , data:{}}
+                          ];
+
+    
+    
+    return service ;
+
+});
 
 app.controller('start',function($scope){
 
@@ -169,10 +181,7 @@ app.controller('third',function($scope,user,subject){
     $scope.username = user.username ; 
 
 
-    function personalityf(parray,pmap){
-        //console.log(parray)
-        //console.log(parray.length);
-        
+    function personalityf(parray){
                
         var max = parray[0];
         var pos = 0;
@@ -182,29 +191,83 @@ app.controller('third',function($scope,user,subject){
                 pos=i;
             }
         }
-        //return personality ;
-        return pmap.get(pos)
+       
+        return pos;
 
     }
-    $scope.personality = user.personality = personalityf(user.personalityarray,subject.pmap) ;
-    
 
-    function interestf(iarray,imap){
+    user.personality = personalityf(user.personalityarray,subject.pmap) ; 
+    $scope.personality = subject.pmap.get(user.personality);
+
+
+    function interestf(iarray){
         //console.log(iarray)
         //console.log(iarray.length)
         var passarray = [];
         for(var i = 0 ; i < iarray.length ; i++ ){
             if(iarray[i]==3){
               
-                passarray.push(imap.get(i));
+                passarray.push(i);
             }
         }
+
         return passarray;
     }
 
-    $scope.interest = user.interest = interestf(user.interestarray,subject.imap);
+    user.interest = interestf(user.interestarray);
+
+    $scope.interest = [];
+
+    for (var i = 0 ; i < user.interest.length ; i++ ){
+
+         $scope.interest.push(subject.imap.get(user.interest[i])) ;
+
+    }
+
+    
+    
+    
 });
 
+app.controller('career',function($scope,career,user){
+
+$scope.careernames = [];
+//console.log(career.careersarray);
+
+    function matchcareer(career,user){
+
+        var idarray = [] ;
+        //console.log(user);
+        //console.log(career); 
+        for (var i = 0 ; i < career.length ; i++){
+
+            if(career[i].personality == user.personality)
+            {
+                
+                if(JSON.stringify(career[i].interest) == JSON.stringify(user.interest)){
+                    idarray.push(career[i].id);
+                    
+                }
+                
+            }
+
+        }
+
+        return idarray ;
+        
+    }
+
+    var careeridarray = matchcareer(career.careersarray,user); 
+    
+    for(var i = 0 ; i < careeridarray.length ; i++ ){
+
+        $scope.careernames.push(career.careersarray[careeridarray[i]].name);
+
+    }
+    console.log($scope.careernames);
+    
+
+})
 
 
 // routing 
@@ -234,6 +297,12 @@ app.config(['$routeProvider',function($routeProvider){
 
         templateUrl:'html/third.html',
         controller:'third'
+
+     })
+     .when('/career',{
+
+        templateUrl : 'html/career.html',
+        controller : 'career'
 
      })
 
