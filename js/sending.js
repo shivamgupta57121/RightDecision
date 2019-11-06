@@ -1,6 +1,4 @@
 var app = angular.module("app",['ngRoute']);
-
-
 // factories = data 
 
 app.factory('subject',function(){
@@ -244,9 +242,9 @@ $scope.careernames = [];
             if(career[i].personality == user.personality)
             {
                 
-                if(JSON.stringify(career[i].interest) == JSON.stringify(user.interest)){
+                if(JSON.stringify(career[i].interest) == JSON.stringify(user.interest))
+                {
                     idarray.push(career[i].id);
-                    
                 }
                 
             }
@@ -264,6 +262,7 @@ $scope.careernames = [];
         $scope.careernames.push(career.careersarray[careeridarray[i]].name);
 
     }
+    
     console.log($scope.careernames);
     
 
@@ -308,76 +307,3 @@ app.config(['$routeProvider',function($routeProvider){
 
 }])
 
-
-/*
-app.controller('first1',function($scope,$route){
-
-  
-    console.log($route)
-
-    
-    
-    
-    $scope.qcount = 0;
-    
-    $scope.usersoul;
-    $scope.personalityarray = [0,0,0,0,0,0];
-    
-    //$scope.question = fetch('./data.json').then(response=>{return response.json(); }).then(obj =>{return obj.data });
-    
-    $scope.question = [[0,'Do you like to read Sherlock homes ?'],[0,'Do you like to study about human body ?'],[1,'Have you worked with any NGO ?'],[1,'Have you helped any poor person .']];
-    
-    
-    $scope.totalquestions = $scope.question.length;
-    
-    $scope.currentquestion = $scope.question[$scope.qcount][1] ;
-    $scope.currentquestionpersonality = $scope.question[$scope.qcount][0] 
-    
-    
-    
-    $scope.choosevalue ;
-    
-    $scope.addvalue = function(){
-    
-    console.log($scope.choosevalue);
-    
-    }
-    
-    
-    $scope.nextquestion = function(){
-    
-    
-        
-        var availableoptions = document.getElementsByClassName("availableoptions");
-    
-        for ( var i =0 ; i < availableoptions.length ; i++){
-    
-            availableoptions[i].checked = false;
-         }
-        
-    
-    
-    
-        ++$scope.qcount;
-        console.log("hello");
-    
-    
-        if($scope.choosevalue == 4 || $scope.choosevalue == 5)
-             $scope.personalityarray[$scope.currentquestionpersonality]++;
-    
-        console.log($scope.personalityarray);
-    
-       
-    
-        
-    
-            $scope.currentquestion = $scope.question[$scope.qcount][1] ;
-            $scope.currentquestionpersonality = $scope.question[$scope.qcount][0] 
-    
-        
-    
-    }
-    
-
-});  
-*/
