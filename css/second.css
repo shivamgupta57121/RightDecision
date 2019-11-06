@@ -91,7 +91,9 @@ input[type=radio]:checked + label {
     border: none;
     background-color:#000000;
     color: #ffffff;
+
     border: 2px solid #ffffff;
+
  }
 
 #next{
