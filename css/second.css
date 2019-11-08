@@ -1,13 +1,10 @@
-#app{
 
-    background-color: rgb(248, 248,248);
-
-}
 
 #appheader{
     
     display: flex;
     margin: 28px;
+    
 }
 
 #appheader #c {
@@ -82,7 +79,7 @@ input[type=radio] {
 input[type=radio] + label {
     display:inline-block;
     font: bold 15px 'open sans';
-    margin-left: 15%;
+    
     padding: 4px 12px;
     width : 70%;
     background-color: #ffffff;
@@ -94,6 +91,9 @@ input[type=radio]:checked + label {
     border: none;
     background-color:#000000;
     color: #ffffff;
+
+    border: 2px solid #ffffff;
+
  }
 
 #next{
