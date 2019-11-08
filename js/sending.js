@@ -42,8 +42,8 @@ app.factory('user',function(){
     service.personality = 0;
     service.interest =  [1,4] ;
  
-    service.personalityarray = [0,0,0,7,0,0];
-    service.interestarray = [1,2,0,0,2,1,4,0];
+    service.personalityarray = [0,0,0,0,0,0];
+    service.interestarray = [0,0,0,0,0,0,0,0];
     
     
     return service; 
