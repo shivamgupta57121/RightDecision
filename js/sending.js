@@ -39,8 +39,8 @@ app.factory('user',function(){
     var service = {};
     service.username = 'Rohit Bansal';
 
-    service.personality = 0;
-    service.interest =  [1,4] ;
+    service.personality = 3;
+    service.interest =  [1,2,3] ;
  
     service.personalityarray = [0,0,0,0,0,0];
     service.interestarray = [0,0,0,0,0,0,0,0];
@@ -56,9 +56,13 @@ app.factory('career',function(){
     var service = {};
 
     service.careersarray = [
-                            {name : 'Doctor', personality : 3 , interest : [0,6] , id: 0 , data:{}},
-                            {name : 'Police Officer ', personality : 1 , interest :[3,4,5,7],id:1 , data:{}},
-                            {name : 'Bank Manager', personality : 0 , interest :[1,4] , id:2 , data:{}}
+                            {name : 'Doctor', personality : 3 , interest : [4,5,6] , id: 0 , data:{}},
+                            {name : 'Police Officer ', personality : 3 , interest :[4,5,6,3],id:1 , data:{}},
+                            {name : 'Engineer', personality : 3 , interest :[4,5,1] , id:2 , data:{}},
+                            {name : 'Bank Manager', personality : 3 , interest :[1,4] , id:3 , data:{}},
+                            {name : 'BM', personality : 3 , interest :[2] , id:4 , data:{}}
+                            
+
                           ];
 
     
@@ -232,7 +236,7 @@ app.controller('career',function($scope,career,user){
 $scope.careernames = [];
 //console.log(career.careersarray);
 
-    function matchcareer(career,user){
+   /* function matchcareer3(career,user){
 
         var idarray = [] ;
         //console.log(user);
@@ -253,9 +257,47 @@ $scope.careernames = [];
 
         return idarray ;
         
+    } */
+    function matchcareer1(career,user){
+
+        var idarray = [] ;
+        //console.log(user);
+        //console.log(career); 
+        for (var i = 0 ; i < career.length ; i++){
+
+            var flag = 0;
+            if(user.personality == career[i].personality)
+            {
+
+                for(var j =  0 ; j < user.interest.length ;j++){
+
+                    for(var k = 0 ; k < career[i].interest.length ; k++){
+
+                        if(user.interest[j] == career[i].interest[k]){
+
+                            flag = 1;
+                            break;
+                            
+                        }
+
+                    }
+                    if(flag==1) break;
+
+                }
+                
+            }
+            if(flag == 1)
+            idarray.push(career[i].id);
+            
+
+        }
+
+        return idarray ;
+        
     }
 
-    var careeridarray = matchcareer(career.careersarray,user); 
+    //var careeridarray = matchcareer3(career.careersarray,user); 
+    var careeridarray = matchcareer1(career.careersarray,user);
     
     for(var i = 0 ; i < careeridarray.length ; i++ ){
 
