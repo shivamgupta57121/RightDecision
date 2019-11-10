@@ -97,9 +97,18 @@ app.controller('first',function($scope,questiondata,user){
         }
            
         
-        if($scope.choosevalue == 4 || $scope.choosevalue == 5){
-             user.personalityarray[$scope.currentquestionpersonality]++;
+        if($scope.choosevalue == 2){
+             user.personalityarray[$scope.currentquestionpersonality] = user.personalityarray[$scope.currentquestionpersonality] + 0.25;
         }
+        if($scope.choosevalue == 3){
+             user.personalityarray[$scope.currentquestionpersonality] = user.personalityarray[$scope.currentquestionpersonality] + 0.5;
+        }
+        if($scope.choosevalue == 4){
+            user.personalityarray[$scope.currentquestionpersonality] = user.personalityarray[$scope.currentquestionpersonality] + 0.75;
+       }
+       if($scope.choosevalue == 5){
+        user.personalityarray[$scope.currentquestionpersonality] = user.personalityarray[$scope.currentquestionpersonality] + 1;
+       }
             
         ++$scope.qcount;
     
@@ -144,9 +153,19 @@ app.controller('second',function($scope,questiondata,user){
             availableoptions[i].checked = false;
         }
             
-        if($scope.choosevalue == 4 || $scope.choosevalue == 5){
-            user.interestarray[$scope.currentquestionpersonality]++;
+        if($scope.choosevalue == 2 ){
+            user.interestarray[$scope.currentquestionpersonality] = user.interestarray[$scope.currentquestionpersonality] + 0.25;
         }
+        if($scope.choosevalue == 3 ){
+            user.interestarray[$scope.currentquestionpersonality] = user.interestarray[$scope.currentquestionpersonality] + 0.5;
+        }
+        if($scope.choosevalue == 4 ){
+            user.interestarray[$scope.currentquestionpersonality] = user.interestarray[$scope.currentquestionpersonality] + 0.75;
+        }
+        if($scope.choosevalue == 5 ){
+            user.interestarray[$scope.currentquestionpersonality] = user.interestarray[$scope.currentquestionpersonality] + 1;
+        }
+                
             
         ++$scope.qcount;
 
@@ -207,7 +226,7 @@ app.controller('third',function($scope,user,subject){
         //console.log(iarray.length)
         var passarray = [];
         for(var i = 0 ; i < iarray.length ; i++ ){
-            if(iarray[i]==3){
+            if(iarray[i]>=2){
               
                 passarray.push(i);
             }
