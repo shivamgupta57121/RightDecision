@@ -2,7 +2,7 @@
 #appheader{
     
     display: flex;
-    margin: 28px;
+    margin: 28px 28px 10px 28px;
 }
 
 #appheader #c {
@@ -28,7 +28,19 @@
     background: green;
     border-bottom: 1px solid green;
 }
-
+#pipe0{
+    width:35px;
+}
+#pipe01{
+    width: 15px;
+}
+#cn{
+    margin:0 12px;
+}
+#appp{
+    display: flex;
+    margin-bottom: 28px;
+}
 .c1,
 .c2,
 .c3{
