@@ -1,0 +1,14 @@
+.ind{
+    margin-top: 20px;
+    text-align: left;
+    font: bold 15px 'open sans';
+}
+#clist{
+    margin: 20px 0;
+}
+.career{
+    font: bold 25px 'open sans';
+    border: 2px solid grey;
+    background-color: white;
+    margin: 20px 0;
+}
