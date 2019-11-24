@@ -19,7 +19,8 @@ app.factory('subject',function(){
                             [4,'Economics'],
                             [5,'Political Science'],
                             [6,'Phycology'],
-                            [7,'Arts']]);
+                            [7,'Arts'],
+                            [8,'Research']]);
 
     return service ;
 });
@@ -28,16 +29,15 @@ app.factory('questiondata' , function(){
 
     var service = {}
     
-    service.personality =[
-                          [0,'I like to organize things(files, desks/offices).'],[0,'I like to have clear instructions  to follow.'],[0,'I like to have clear instructions  to follow.'],[0,'I wouldn’t mind working 8 hours per day in an office.'],[0,'I pay attention to details.'],[0,'I like to do filing or typing.'],[0,'I am good at keeping records of my work.'] ,[0,'I would like to work in an office.'],[0,'I like to organize things(files, desks/offices).'],[0,'I like to have clear instructions  to follow.'],
-                         ,[1,'I like to work on cars.'],[1,'I like to build things.'],[1,'I like to take care of animals.'],[1,'I like putting things together or assembling things.'],[1,'I like to cook.'],[1,'I am a practical person.'],[1,'I like working outdoors.'],[1,'I like to assemble electronic parts.'],[1,'I like to work on cars.'],[1,'I like to build things.'],
-                         ,[2,'I am good at working independently.'],[2,'I like to read about art and music.'],[2,'I enjoy creative writing.'],[2,'I am a creative person.'],[2,'I like to play instruments or sing.'],[2,'I like acting in plays.'],[2,'I like to draw.'],[2,'I love writing songs.'],[2,'I am good at working independently.'],[2,'I like to read about art and music.'],
-                         ,[3,'I like to do puzzles.'],[3,'I like to do experiments.'],[3,'I enjoy trying to figure out how things work.'],[3,'I enjoy science.'],[3,'I like to analyze things (problems/ situations).'],[3,'I like working with numbers or charts.'],[3,'I’m good at math.'],[3,'I love studing animal behaviors.'],[3,'I like to do puzzles.'],[3,'I like to do experiments.'],
-                         ,[4,'I like to work in teams.'],[4,'I like to teach or train people.'],[4,'I like trying to help people solve their problems.'],[4,'I am interested in healing people.'],[4,'I enjoy learning about other cultures.'],[4,'I like to get into discussions about issues.'],[4,'I like helping people.'],[4,'I love helping elderly people with their daily activities.'],[4,'I like to work in teams.'],[4,'I like to teach or train people.'],
-                         ,[5,'I am an ambitious person.'],[5,'I set goals for myself.'],[5,'I like to try to influence or persuade people.'],[5,'I like selling things.'],[5,'I am quick to take on new responsibilities.'],[5,'I would like to start my own business.'],[5,'I like to lead.'],[5,'I like to give speeches.']  ,[5,'I am an ambitious person.'],[5,'I set goals for myself.']
+    service.personality =[[1,'I like to build things.'],[1,'I like to take care of animals.'],[1,'I like putting things together or assembling things.'],[1,'I like to cook.'],[1,'I am a practical person.'],[1,'I like working outdoors.'],[1,'I like to assemble electronic parts.'],[1,'I like to work on cars.'],[1,'I like to build things.'],
+                         [0,'I wouldn’t mind working 8 hours per day in an office.'],[0,'I pay attention to details.'],[0,'I like to do filing or typing.'],[0,'I am good at keeping records of my work.'] ,[0,'I would like to work in an office.'],[0,'I like to organize things(files, desks/offices).'],[0,'I like to have clear instructions  to follow.'],
+                         [2,'I am good at working independently.'],[2,'I like to read about art and music.'],[2,'I enjoy creative writing.'],[2,'I am a creative person.'],[2,'I like to play instruments or sing.'],[2,'I like acting in plays.'],[2,'I like to draw.'],[2,'I love writing songs.'],[2,'I am good at working independently.'],[2,'I like to read about art and music.'],
+                         [3,'I like to do experiments.'],[3,'I enjoy trying to figure out how things work.'],[3,'I enjoy science.'],[3,'I like to analyze things (problems/ situations).'],[3,'I like working with numbers or charts.'],[3,'I’m good at math.'],[3,'I love studing animal behaviors.'],[3,'I like to do puzzles.'],[3,'I like to do experiments.'],
+                         [4,'I like to work in teams.'],[4,'I like to teach or train people.'],[4,'I like trying to help people solve their problems.'],[4,'I am interested in healing people.'],[4,'I enjoy learning about other cultures.'],[4,'I like to get into discussions about issues.'],[4,'I like helping people.'],[4,'I love helping elderly people with their daily activities.'],[4,'I like to work in teams.'],[4,'I like to teach or train people.'],
+                         [5,'I am an ambitious person.'],[5,'I set goals for myself.'],[5,'I like to try to influence or persuade people.'],[5,'I like selling things.'],[5,'I am quick to take on new responsibilities.'],[5,'I would like to start my own business.'],[5,'I like to lead.'],[5,'I like to give speeches.']  ,[5,'I am an ambitious person.'],[5,'I set goals for myself.']
                          ];
 
-    service.interest = [[0,'You  like maths'],[0,'You like algebra'],[0,'you like pythegorem theorem'],[1,'You like Physics'],[1,'You like newton'],[2,'You like organic chemistry'],[2,'You like chemisry']];
+    service.interest = [[0,'You  like maths.'],[0,'You like algebra.'],[0,'you like pythegorem theorem.'],[1,'You like Physics.'],[1,'You like newton.'],[2,'You like organic chemistry.'],[2,'You like chemisry.'],[0,'You  like maths.'],[0,'You like algebra.'],[0,'you like pythegorem theorem.'],[1,'You like Physics.'],[1,'You like newton.'],[2,'You like organic chemistry.'],[2,'You like chemisry.'],[0,'You  like maths.'],[0,'You like algebra.'],[0,'you like pythegorem theorem.'],[1,'You like Physics.'],[1,'You like newton.'],[2,'You like organic chemistry.'],[2,'You like chemisry.'],[0,'You  like maths.'],[0,'You like algebra.'],[0,'you like pythegorem theorem.'],[1,'You like Physics.'],[1,'You like newton.'],[2,'You like organic chemistry.']];
     
     return service;
 
@@ -48,11 +48,11 @@ app.factory('user',function(){
     var service = {};
     service.username = 'Rohit Bansal';
 
-    service.personality = 3;
-    service.interest =  [1,2,3] ;
+    service.personality = 1;
+    service.interest =  [0,7,3] ;
  
     service.personalityarray = [0,0,0,0,0,0];
-    service.interestarray = [0,0,0,0,0,0,0,0];
+    service.interestarray = [0,0,0,0,0,0,0,0,0];
     
     
     return service; 
@@ -69,10 +69,12 @@ app.factory('career',function(){
                             {name : 'Police Officer ', personality : 3 , interest :[4,5,6,3],id:1 , data:{}},
                             {name : 'Engineer', personality : 3 , interest :[4,5,1] , id:2 , data:{}},
                             {name : 'Bank Manager', personality : 3 , interest :[1,4] , id:3 , data:{}},
-                            {name : 'BM', personality : 3 , interest :[2] , id:4 , data:{}}
-                            
+                            {name : 'Architect', personality : 1 , interest :[0,7,8] , id:4 , data:{}},
+                            {name : 'Mechanical Engineering', personality : 1 , interest :[0,7,8] , id:5 , data:{}},
+                            {name : 'Computer Science', personality : 1 , interest :[0,7,8] , id:6 , data:{}},
+                            {name : 'Product designer', personality : 1 , interest :[0,7,8] , id:7 , data:{}},                           
 
-                          ];
+                        ];
 
     
     
@@ -333,7 +335,7 @@ $scope.careernames = [];
 
     }
     
-    console.log($scope.careernames);
+    //console.log($scope.careernames);
     
 
 })
